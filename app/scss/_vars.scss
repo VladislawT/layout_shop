@@ -1,0 +1,23 @@
+$fontFamily: 'Roboto', sans-serif;
+
+$minWidth: 320px;
+$maxWidth: 1480px;
+$maxWidthContainer: 1140;
+$md1: $maxWidthContainer + 12;
+$md2: 989;
+$md3: 700;
+
+%graystyle{
+    transition: all .3s ease 0s;
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+}
+
+%graystyleoff{
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -o-filter: grayscale(0);
+}

@@ -1,0 +1,328 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+//обводка кнопок
+
+
+//полоса прокрутки
+::-webkit-scrollbar {
+    width: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+ul,
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-size: inherit;
+}
+
+body {}
+
+.container {
+    max-width: $maxWidthContainer + px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.rub::after {
+    content: "₽";
+}
+
+.btn {
+    display: inline-flex;
+    padding: 0px 25px;
+    justify-content: center;
+    align-items: center;
+    height: 39px;
+    transition: all .3s ease 0s;
+    background-color: #f68038;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 18px;
+    text-transform: uppercase;
+
+    @media (min-width: $md2+px) {
+        &:hover {
+            background-color: #df7433;
+            color: #666666;
+        }
+    }
+
+    &-grey{
+        color: #666666;
+        background-color: #e6e6e6;
+        @media (min-width: $md2+px) {
+            &:hover {
+                color: #4e4c4c;
+                background-color: #cac7c7;
+                
+            }
+        }
+    }
+}
+
+button{
+    outline: none;
+    border: none;
+}
+
+*:focus {
+    outline-style: none;
+    outline-width: 0px !important;
+    outline-color: none !important;
+}
+
+input {
+    border-radius: 0 !important;
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 0px 20px;
+    border: none;
+    outline: none;
+}
+
+.checkbox {
+    position: relative;
+
+    &__input {
+        position: absolute;
+        width: 100%;
+        height: 260%;
+        opacity: 0;
+        z-index: 2;
+    }
+
+    &__text {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        font-size: 16px;
+        color: #ffffff;
+        letter-spacing: -0.3px;
+        line-height: calc(20/16);
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            align-self: flex-start;
+            margin: 0 14px 0 0;
+            flex: 0 0 20px;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 18px;
+            background: #ffffff;
+            border: 1px solid #a7a7a7;
+        }
+    }
+
+    a {
+        color: #ffffff;
+        text-decoration: underline;
+
+        @media (min-width: 992px) {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+
+
+
+.my-dots {
+    position: absolute;
+    bottom: -25px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.my-dots li {
+    position: relative;
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    margin: 0 25px;
+    padding: 0;
+    cursor: pointer;
+
+    @media (max-width: 600px) {
+        margin: 0 18px;
+    }
+
+    @media (max-width: 500px) {
+        margin: 0 8px;
+    }
+
+    @media (max-width: 500px) {
+        display: none;
+    }
+}
+
+.my-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 55px;
+    height: 55px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.my-dots li button:hover,
+.my-dots li button:focus {
+    outline: none;
+}
+
+.my-dots li button:hover:before,
+.my-dots li button:focus:before {
+    opacity: 1;
+}
+
+.my-dots li button:before {
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    opacity: 1;
+    border-radius: 100%;
+    background-color: #f68038;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.my-dots li:nth-child(1) button:before {
+    content: url('../images/mainSlider/image-2.png');
+}
+
+.my-dots li:nth-child(2) button:before {
+    content: url('../images/mainSlider/image-2.png');
+}
+
+.my-dots li:nth-child(3) button:before {
+    content: url('../images/mainSlider/image-3.png');
+}
+
+.my-dots li:nth-child(4) button:before {
+    content: url('../images/mainSlider/image-4.png');
+}
+
+.my-dots li:nth-child(5) button:before {
+    content: url('../images/mainSlider/image-5.png');
+}
+
+
+.my-dots li.slick-active button:before {
+    opacity: 1;
+    color: #f68038;
+    content: '1';
+    font-size: 18px;
+    line-height: 20px;
+    color: #ffffff;
+    padding: 15px 0;
+    border: 2px solid #ffffff;
+
+}
+
+.my-dots li.slick-active:nth-child(2) button:before {
+    content: '2';
+}
+
+.my-dots li.slick-active:nth-child(3) button:before {
+    content: '3';
+}
+
+.my-dots li.slick-active:nth-child(4) button:before {
+    content: '4';
+}
+
+.my-dots li.slick-active:nth-child(5) button:before {
+    content: '5';
+}
+
+
+._arrow {
+    background: url('../images/mainSlider/arrow-right.svg') 0 0 no-repeat;
+    width: 33px;
+    height: 30px;
+    cursor: pointer;
+
+    @media (min-width: $md2 + px) {
+        &:hover {
+            background: url('../images/mainSlider/arrow-left.svg') 0 0 no-repeat;
+        }
+    }
+
+    ;
+}
+
+._arrow_prev {
+    transform: rotate(-180deg);
+
+    @media (min-width: $md2 + px) {
+        &:hover {
+            transform: rotate(0deg);
+        }
+    }
+
+    ;
+}
+
+._arrow_next {
+    @media (min-width: $md2 + px) {
+        &:hover {
+            transform: rotate(180deg);
+        }
+    }
+
+    ;
+}
