@@ -1,3 +1,9 @@
+@media (max-width: $md1 + px) {
+    .checkbox__input:checked+.checkbox__text::after{
+        display: none;
+    }
+}
+
 @media (max-width: $md2 + px) {
     body.lock {
         overflow: hidden;
@@ -14,6 +20,7 @@
             overflow: auto;
             background-color: royalblue;
             padding: 90px 10px 20px 10px;
+            z-index: 3;
             transition: all .3s;
             &.active{
                 top: 0;
